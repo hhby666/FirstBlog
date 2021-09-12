@@ -50,4 +50,9 @@ public class ArticleServiceImpl implements ArticleService {
     public Article selectById(int id) {
         return articleMapper.selectById(id);
     }
+
+    @Override
+    public int updateArticle(Article article) {
+        return articleMapper.updateArticle(article);
+    }
 }

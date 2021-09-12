@@ -31,4 +31,10 @@
         from article
         where id = #{id};
     </select>
+
+    <update id="updateArticle" parameterType="article">
+        update article
+        set type=#{type}, author=#{author}, content=#{content}
+        where id=#{id};
+    </update>
 </mapper>

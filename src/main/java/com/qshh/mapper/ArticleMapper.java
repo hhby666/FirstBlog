@@ -47,4 +47,6 @@ public interface ArticleMapper {
 
     Article selectById(@Param("id") int id);
 
+    int updateArticle(Article article);
+
 }

@@ -10,24 +10,31 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-<%--    <link type="text/css" href="../../css/editor.css">--%>
     <script>
         $(function (){
+            $("#subBtn").click(function (){
+                // 此时data为js对象 使用JSON.stringify(data)变为json对象
+                const data = {
+                    "id": ${id},
+                    "author": $("input[name='author']").val(),
+                    "type": Number($("select[name='type']").val()),
+                    "content": ue.getContent(),
+                };
                 $.ajax({
-                    url:"${pageContext.request.contextPath}/update",
+                    url:"${pageContext.request.contextPath}/updateArticle",
                     type: "POST",
-                    //此处的${id}是从controller层/toUpdate传来
-                    data: {"id": ${id}},
-                    // contentType: "application/json;charset=utf-8",
-                    dataType: "json",
-                    success: function (data1){
-                        ${"#author"}.text = data1.author;
+                    data: JSON.stringify(data),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "text",
+                    success: function (mess){
+                        alert(mess);
                     },
                     error: function (){
-                         alert("error");
+                        alert("点击按钮提交后会有两个article传入后台，第一个article属性全为null，第二个正常，暂未解决！！");
                     }
                 });
             });
+        });
     </script>
 </head>
 <body>
@@ -74,6 +81,25 @@
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
         var ue = UE.getEditor('container', {initialFrameHeight:"100%", initialFrameWidth:"100%", autoHeightEnabled: false});
+        //富文本编辑器加载完成后再进修ajax传数据
+        ue.ready(function (){
+            $.ajax({
+                url:"${pageContext.request.contextPath}/update",
+                type: "POST",
+                //此处的${id}是从controller层/toUpdate传来
+                data: {"id": ${id}},
+                // contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data1){
+                    $("#author").val(data1.author);
+                    $("#type").val(String(data1.type));
+                    ue.setContent(data1.content);
+                },
+                error: function (){
+                    alert("error");
+                }
+            });
+        });
     </script>
 </body>
 </html>

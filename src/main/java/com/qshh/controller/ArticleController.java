@@ -70,7 +70,9 @@ public class ArticleController {
 
     /*index页面 通过a标签 请求：/toUpdate?id=...的方式到这来
     这里再将id传到update.jsp页面，
-    update.jsp再通过ajax将id传回/update请求*/
+    update.jsp再通过ajax将id传回/update请求
+    /update处理前端数据,返回修改后的数据
+    点击提交按钮，走/updateArticle,实现更新后的文章提交*/
 
     @RequestMapping("/toUpdate")
     public String toUpdate(int id, Model model){
@@ -85,7 +87,18 @@ public class ArticleController {
         Article article =articleService.selectById(id);
         System.out.println(JsonUtils.toJson(article));
         return JsonUtils.toJson(article);
+    }
 
+    @ResponseBody
+    @RequestMapping("/updateArticle")
+    public String updateArticle(@RequestBody Article article){
+        //格式化当前时间为 timestamp类型，存入数据库
+        SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        String dateTime = df.format(new Date());
+        article.setTime(dateTime);
+        System.out.println(article.toString());
+        articleService.updateArticle(article);
+        return "success";
     }
 
     @ResponseBody
