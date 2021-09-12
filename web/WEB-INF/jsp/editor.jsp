@@ -62,6 +62,7 @@
                 <option value="7">创意</option>
             </select>
         </div>
+        <label style="margin-left: 9%;margin-right:4%; position: relative; top: 15px;">tips:20px的字号最美观</label>
         <%--type写的话默认是submmit，点击就会表单提交，会打断ajax提交数据--%>
         <button type="button" class="btn btn-default form-control" id="subBtn" style="margin-top: 2%;margin-left: 5%">提交</button>
         <div id="editorDiv" style="height: 70%;width: 70%;margin-left: 15%;margin-top: 2%;">

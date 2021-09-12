@@ -17,4 +17,5 @@ public interface ArticleService {
     List<Article> allArticle();
     Article selectById(int id);
     int updateArticle(Article article);
+    String selectNameById(int id);
 }

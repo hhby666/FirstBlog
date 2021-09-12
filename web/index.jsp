@@ -15,25 +15,16 @@
     </script>
     <script type="text/javascript">
         function preview(data){
-          <%--let htmlString =--%>
-          <%--        '<div class="preview" style="width: 70%; height: 100px; background-color: #E0F4F1; border-radius: 25px;padding-left: 20px;margin-left: 10%">' +--%>
-          <%--        '<a href="${pageContext.request.contextPath}/toDetail?id=' +--%>
-          <%--          data.id+--%>
-          <%--          '">'+--%>
-          <%--        '<h2 class="con">' +--%>
-          <%--            data.content +--%>
-          <%--          '</h2>' +--%>
-          <%--          '</a>' +--%>
-          <%--        '</div>';--%>
           let htmlString =
                   '<div class="preview" style="width: 70%; height: 100px; background-color: #E0F4F1; border-radius: 25px;padding-left: 20px;margin-left: 10%;margin-bottom: 4%;">' +
                     '<div class="article" style="width: 90%;float: left">' +
-                      '<a href="/toDetail?id='+ data.id +'"><h2 class="con">' + data.content + '</h2></a>' +
+                      '<a href="/toDetail?id='+ data.id +'" style="text-decoration: none;color: black;font-size: 14px; cursor:pointer;' +
+                  '"><h2 class="con">' + data.content + '</h2></a>' +
                      '</div>' +
                      '<div class="opra" style="width: 10%;float: right;margin-top: 7%;background-color: white;border-radius: 20px">' +
-                        '<a href="/toUpdate?id='+ data.id +'" style="padding-left: 13px;padding-right: 2px">修改</a>' +
+                        '<a href="/toUpdate?id='+ data.id +'" style="padding-left: 13px;padding-right: 2px; text-decoration: none;color: black";cursor:pointer;>修改</a>' +
                         //删除页面 直接在controler层删掉数据，再重定向请求：redirect:/selectByType
-                        '<a href="/delete?id='+ data.id +'" style="padding-left: 3px;padding-right: 10px">删除</a>' +
+                        '<a href="/delete?id='+ data.id +'" style="padding-left: 3px;padding-right: 10px; text-decoration: none;color: black";cursor:pointer;>删除</a>' +
                      '</div>' +
                   '</div>';
           return htmlString;

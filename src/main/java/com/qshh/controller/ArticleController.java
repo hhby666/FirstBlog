@@ -38,8 +38,11 @@ public class ArticleController {
 
     @RequestMapping("/toDetail")
     public String toDetail(int id, Model model){
-        String content = articleService.getContentById(id);
-        model.addAttribute("content", content);
+        Article article = articleService.selectById(id);
+        model.addAttribute("content", article.getContent());
+        model.addAttribute("author", article.getAuthor());
+        model.addAttribute("type", articleService.selectNameById(article.getType()));
+        model.addAttribute("time", article.getTime());
         //为什么在controller层直接跳转到detail.jsp时，detail.jsp中的内容直接会在iframe中显示，而不是另外跳转到单独页面呢
         return "detail";
     }

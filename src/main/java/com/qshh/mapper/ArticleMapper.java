@@ -49,4 +49,9 @@ public interface ArticleMapper {
 
     int updateArticle(Article article);
 
+    /*
+    根据type_id 查type_name
+     */
+    String selectNameById(@Param("id") int id);
+
 }

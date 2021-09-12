@@ -37,4 +37,8 @@
         set type=#{type}, author=#{author}, content=#{content}
         where id=#{id};
     </update>
+
+    <select id="selectNameById" parameterType="int" resultType="string">
+        select type_name from type where type_id = #{id};
+    </select>
 </mapper>
