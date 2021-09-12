@@ -1,0 +1,19 @@
+#sideBarDiv{
+    height: 92.8%;
+    width: 10%;
+    background: #393D48;
+    position: relative;
+    bottom: 1px;
+    float: left;
+}
+.bar a{
+    color: #777777;
+    font-size: 14px;
+}
+/*.bar a :hover{*/
+/*    color: #292F33;*/
+/*}*/
+
+/*.sideBar>li :hover{*/
+/*    background-color: #22262E;*/
+/*}*/

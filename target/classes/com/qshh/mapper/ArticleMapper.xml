@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qshh.mapper.ArticleMapper">
+    <select id="selectByType" parameterType="string" resultType="article">
+        select * from article as a, type as t where t.type_name= '${type}' and t.type_id = a.type;
+    </select>
+
+    <select id="getContentById" parameterType="int" resultType="string">
+        select content
+        from article
+        where id = #{id};
+    </select>
+
+    <insert id="addArticle" parameterType="article">
+        insert into article (type, content, author, time) values (#{type}, #{content}, #{author}, #{time});
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from article where id = #{id}
+    </delete>
+
+    <select id="allArticle" resultType="article">
+        select * from article;
+    </select>
+
+    <select id="selectById" parameterType="int" resultType="article">
+        select *
+        from article
+        where id = #{id};
+    </select>
+</mapper>
