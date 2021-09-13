@@ -958,6 +958,7 @@ SELECT|sys.sys_config
       <Position>3</Position>
       <Comment>文章内容</Comment>
       <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="299" parent="294" name="author">
       <Position>4</Position>
@@ -968,25 +969,32 @@ SELECT|sys.sys_config
     <column id="300" parent="294" name="time">
       <Position>5</Position>
       <Comment>发布时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
-    <key id="301" parent="294" name="PRIMARY">
+    <column id="301" parent="294" name="title">
+      <Position>6</Position>
+      <Comment>文章题目</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="302" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="302" parent="295" name="type_id">
+    <column id="303" parent="295" name="type_id">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="303" parent="295" name="type_name">
+    <column id="304" parent="295" name="type_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <key id="304" parent="295" name="PRIMARY">
+    <key id="305" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>type_id</ColNames>
       <Primary>1</Primary>

@@ -19,6 +19,7 @@
                     "author": $("input[name='author']").val(),
                     "type": Number($("select[name='type']").val()),
                     "content": ue.getContent(),
+                    "title": $("input[name='title']").val()
                 };
                 $.ajax({
                     url:"${pageContext.request.contextPath}/updateArticle",
@@ -42,13 +43,13 @@
     <form class="form-inline" id="articleAttr" action="" method="post">
         <div class="form-group" style="margin-left: 15%;margin-top: 2%">
             <label for="author">作者:</label>
-            <input type="text" class="form-control" id="author" name="author" placeholder="qshh">
+            <input type="text" class="form-control" id="author" name="author" style="width: 100px">
         </div>
 <%--        <div class="form-group" style="margin-left: 15%;margin-top: 2%">--%>
 <%--            <label for="exampleInputEmail2">分类:</label>--%>
 <%--            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="java">--%>
 <%--        </div>--%>
-        <div class="form-group" style="margin-left: 10%;margin-top: 2%">
+        <div class="form-group" style="margin-left: 5%;margin-top: 2%">
             <label for="type">类型:</label>
             <select class="form-control" id="type" name="type">
                 <%-- value前加：，表示为数值类型。。。。失败--%>
@@ -61,6 +62,10 @@
                 <option value="6">工具</option>
                 <option value="7">创意</option>
             </select>
+        </div>
+        <div class="form-group" style="margin-left: 5%;margin-top: 2%">
+            <label for="title">标题:</label>
+            <input type="text" class="form-control" id="title" name="title" style="width: 348px">
         </div>
         <%--type写的话默认是submmit，点击就会表单提交，会打断ajax提交数据--%>
         <button type="button" class="btn btn-default form-control" id="subBtn" style="margin-top: 2%;margin-left: 5%">提交</button>
@@ -94,6 +99,7 @@
                     $("#author").val(data1.author);
                     $("#type").val(String(data1.type));
                     ue.setContent(data1.content);
+                    $("#title").val(data1.title);
                 },
                 error: function (){
                     alert("error");

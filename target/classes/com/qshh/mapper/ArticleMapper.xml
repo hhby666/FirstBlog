@@ -15,7 +15,7 @@
     </select>
 
     <insert id="addArticle" parameterType="article">
-        insert into article (type, content, author, time) values (#{type}, #{content}, #{author}, #{time});
+        insert into article (type, content, author, time, title) values (#{type}, #{content}, #{author}, #{time}, #{title});
     </insert>
 
     <delete id="delete" parameterType="int">
@@ -34,7 +34,7 @@
 
     <update id="updateArticle" parameterType="article">
         update article
-        set type=#{type}, author=#{author}, content=#{content}
+        set type=#{type}, author=#{author}, content=#{content}, title=#{title}
         where id=#{id};
     </update>
 

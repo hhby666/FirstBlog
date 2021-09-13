@@ -14,12 +14,16 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
     </script>
     <script type="text/javascript">
+      // function contentHandle(content){
+      //   var reg = /[\u4e00-\u9fa5]{20}/;
+      //   return content.match(reg);
+      // }
         function preview(data){
           let htmlString =
-                  '<div class="preview" style="width: 70%; height: 100px; background-color: #E0F4F1; border-radius: 25px;padding-left: 20px;margin-left: 10%;margin-bottom: 4%;">' +
+                  '<div class="preview" style="width: 70%; height: 100px; background-color: #E0F4F1; border-radius: 25px;padding-left: 20px;margin-left: 10%;margin-bottom: 3%; margin-top: 2%">' +
                     '<div class="article" style="width: 90%;float: left">' +
                       '<a href="/toDetail?id='+ data.id +'" style="text-decoration: none;color: black;font-size: 14px; cursor:pointer;' +
-                  '"><h2 class="con">' + data.content + '</h2></a>' +
+                  '"><h2 class="con"><small>' + data.title + '</small></h2></a>' +
                      '</div>' +
                      '<div class="opra" style="width: 10%;float: right;margin-top: 7%;background-color: white;border-radius: 20px">' +
                         '<a href="/toUpdate?id='+ data.id +'" style="padding-left: 13px;padding-right: 2px; text-decoration: none;color: black";cursor:pointer;>修改</a>' +
@@ -27,7 +31,7 @@
                         '<a href="/delete?id='+ data.id +'" style="padding-left: 3px;padding-right: 10px; text-decoration: none;color: black";cursor:pointer;>删除</a>' +
                      '</div>' +
                   '</div>';
-          return htmlString;
+              return htmlString;
         };
         $(function (){
           $(".bar").click(function (){

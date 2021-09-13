@@ -30,7 +30,7 @@
         </div>
         <br>
         <div id="text">
-            ${content}
+            <p style="text-align: center;"><span style="font-size: 36px;">${title}</span><br/><br/></p> ${content}
         </div>
     </div>
 </body>

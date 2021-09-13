@@ -19,6 +19,7 @@
                     "author": $("input[name='author']").val(),
                     "type": Number($("select[name='type']").val()),
                     "content": ue.getContent(),
+                    "title":  $("input[name='title']").val()
                 };
                 $.ajax({
                     url:"${pageContext.request.contextPath}/addArticle",
@@ -42,13 +43,13 @@
     <form class="form-inline" id="articleAttr" action="" method="post">
         <div class="form-group" style="margin-left: 15%;margin-top: 2%">
             <label for="author">作者:</label>
-            <input type="text" class="form-control" id="author" name="author" placeholder="qshh">
+            <input type="text" class="form-control" id="author" name="author" style="width: 100px">
         </div>
 <%--        <div class="form-group" style="margin-left: 15%;margin-top: 2%">--%>
 <%--            <label for="exampleInputEmail2">分类:</label>--%>
 <%--            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="java">--%>
 <%--        </div>--%>
-        <div class="form-group" style="margin-left: 10%;margin-top: 2%">
+        <div class="form-group" style="margin-left: 5%;margin-top: 2%">
             <label for="type">类型:</label>
             <select class="form-control" id="type" name="type">
                 <%-- value前加：，表示为数值类型。。。。失败--%>
@@ -62,7 +63,10 @@
                 <option value="7">创意</option>
             </select>
         </div>
-        <label style="margin-left: 9%;margin-right:4%; position: relative; top: 15px;">tips:20px的字号最美观</label>
+        <div class="form-group" style="margin-left: 5%;margin-top: 2%">
+            <label for="title">标题:</label>
+            <input type="text" class="form-control" id="title" name="title" style="width: 440px">
+        </div>
         <%--type写的话默认是submmit，点击就会表单提交，会打断ajax提交数据--%>
         <button type="button" class="btn btn-default form-control" id="subBtn" style="margin-top: 2%;margin-left: 5%">提交</button>
         <div id="editorDiv" style="height: 70%;width: 70%;margin-left: 15%;margin-top: 2%;">
