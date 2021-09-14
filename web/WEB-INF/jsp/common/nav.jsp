@@ -13,8 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../css/nav.css">
-    <script type="text/javascript" src="../../js/nav.js">
+    <link rel="stylesheet" type="text/css" href="./css/nav.css">
+<%--    <script type="text/javascript" src="./js/nav.js">--%>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/nav.js">
     </script>
 </head>
 <body>
@@ -33,7 +34,7 @@
                     </br>
                     <li role="presentation" class="bar"><a style="cursor:pointer;">linux</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">大数据</a></li>
+                    <li role="presentation" class="bar"><a style="cursor:pointer;">可视化</a></li>
                     </br>
                     <li role="presentation" class="bar"><a style="cursor:pointer;">工具</a></li>
                     </br>

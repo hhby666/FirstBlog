@@ -58,7 +58,7 @@
                 <option value="2">python</option>
                 <option value="3">web</option>
                 <option value="4">linux</option>
-                <option value="5">大数据</option>
+                <option value="5">可视化</option>
                 <option value="6">工具</option>
                 <option value="7">创意</option>
             </select>
@@ -78,10 +78,10 @@
     </form>
 
     <!-- 配置文件 -->
-    <script type="text/javascript" src="../../ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.config.js"></script>
 
     <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="../../ueditor/ueditor.all.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.all.js"></script>
 
     <!-- 实例化编辑器 -->
     <script type="text/javascript">

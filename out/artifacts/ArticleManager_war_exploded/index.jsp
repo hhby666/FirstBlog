@@ -22,13 +22,13 @@
           let htmlString =
                   '<div class="preview" style="width: 70%; height: 100px; background-color: #E0F4F1; border-radius: 25px;padding-left: 20px;margin-left: 10%;margin-bottom: 3%; margin-top: 2%">' +
                     '<div class="article" style="width: 90%;float: left">' +
-                      '<a href="/toDetail?id='+ data.id +'" style="text-decoration: none;color: black;font-size: 14px; cursor:pointer;' +
+                      '<a href="${pageContext.request.contextPath}/toDetail?id='+ data.id +'" style="text-decoration: none;color: black;font-size: 14px; cursor:pointer;' +
                   '"><h2 class="con"><small>' + data.title + '</small></h2></a>' +
                      '</div>' +
                      '<div class="opra" style="width: 10%;float: right;margin-top: 7%;background-color: white;border-radius: 20px">' +
-                        '<a href="/toUpdate?id='+ data.id +'" style="padding-left: 13px;padding-right: 2px; text-decoration: none;color: black";cursor:pointer;>修改</a>' +
+                        '<a href="${pageContext.request.contextPath}/toUpdate?id='+ data.id +'" style="padding-left: 13px;padding-right: 2px; text-decoration: none;color: black";cursor:pointer;>修改</a>' +
                         //删除页面 直接在controler层删掉数据，再重定向请求：redirect:/selectByType
-                        '<a href="/delete?id='+ data.id +'" style="padding-left: 3px;padding-right: 10px; text-decoration: none;color: black";cursor:pointer;>删除</a>' +
+                        '<a href="${pageContext.request.contextPath}/delete?id='+ data.id +'" style="padding-left: 3px;padding-right: 10px; text-decoration: none;color: black";cursor:pointer;>删除</a>' +
                      '</div>' +
                   '</div>';
               return htmlString;

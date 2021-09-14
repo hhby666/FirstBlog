@@ -58,7 +58,7 @@
                 <option value="2">python</option>
                 <option value="3">web</option>
                 <option value="4">linux</option>
-                <option value="5">大数据</option>
+                <option value="5">可视化</option>
                 <option value="6">工具</option>
                 <option value="7">创意</option>
             </select>
