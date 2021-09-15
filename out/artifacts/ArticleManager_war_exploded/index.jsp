@@ -39,7 +39,7 @@
               url:"${pageContext.request.contextPath}/selectByType",
               type:"post",
               data:{
-                type: $(this).text()
+                type: Number($(this).val())
               },
               dataType: "json",   //声明返回数据为json后，自动解析
               success: function (data){

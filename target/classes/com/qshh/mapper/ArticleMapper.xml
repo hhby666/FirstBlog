@@ -4,8 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.qshh.mapper.ArticleMapper">
-    <select id="selectByType" parameterType="string" resultType="article">
-        select * from article as a, type as t where t.type_name= '${type}' and t.type_id = a.type;
+    
+    <resultMap id="MapResult" type="HashMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+    </resultMap>
+    <select id="selectByType" parameterType="int" resultMap="MapResult">
+        select id, title from article where type = #{type} ;
     </select>
 
     <select id="getContentById" parameterType="int" resultType="string">

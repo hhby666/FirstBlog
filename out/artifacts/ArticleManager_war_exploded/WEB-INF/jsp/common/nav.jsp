@@ -26,19 +26,19 @@
                 <a href="#docCollapse" class="nav-header collapsed" data-toggle="collapse" id="collapseParent" onclick="chevron_toggle()">文章分类<span class="pull-right glyphicon glyphicon-chevron-down"></span></a>
                 <ul class="nav nav-pills nav-stacked sideBar" id="docCollapse">
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">java</a></li>
+                    <li role="presentation" class="bar" value="1"><a style="cursor:pointer;">java</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">python</a></li>
+                    <li role="presentation" class="bar" value="2"><a style="cursor:pointer;">python</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">web</a></li>
+                    <li role="presentation" class="bar" value="3"><a style="cursor:pointer;">web</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">linux</a></li>
+                    <li role="presentation" class="bar" value="4"><a style="cursor:pointer;">linux</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">可视化</a></li>
+                    <li role="presentation" class="bar" value="5"><a style="cursor:pointer;">可视化</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">工具</a></li>
+                    <li role="presentation" class="bar" value="6"><a style="cursor:pointer;">工具</a></li>
                     </br>
-                    <li role="presentation" class="bar"><a style="cursor:pointer;">创意</a></li>
+                    <li role="presentation" class="bar" value="7"><a style="cursor:pointer;">创意</a></li>
                     </br>
                 </ul>
             </li>

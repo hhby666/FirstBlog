@@ -7,10 +7,11 @@ package com.qshh.service;
 import com.qshh.pojo.Article;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ArticleService {
 
-    List<Article> selectByType(String type);
+    List<Map<String, Object>> selectByType(int type);
     String getContentById(int id);
     int addArticle(Article article);
     int delete(int id);

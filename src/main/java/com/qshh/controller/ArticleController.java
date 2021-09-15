@@ -15,6 +15,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description:
@@ -31,8 +32,8 @@ public class ArticleController {
 
     @ResponseBody
     @RequestMapping("/selectByType")
-    public String selectByType(String type) throws JsonProcessingException {
-        List<Article> articleList = articleService.selectByType(type);
+    public String selectByType(int type) throws JsonProcessingException {
+        List<Map<String, Object>> articleList = articleService.selectByType(type);
         return JsonUtils.toJson(articleList);
     }
 

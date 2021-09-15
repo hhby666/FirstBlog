@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description:
@@ -22,7 +23,7 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleMapper articleMapper;
 
     @Override
-    public List<Article> selectByType(@RequestParam("type") String type) {
+    public List<Map<String, Object>> selectByType(@RequestParam("type") int type) {
         return articleMapper.selectByType(type);
     }
 

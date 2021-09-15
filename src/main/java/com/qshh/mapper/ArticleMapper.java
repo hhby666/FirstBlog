@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Component("articleMapper")
 public interface ArticleMapper {
@@ -20,7 +21,7 @@ public interface ArticleMapper {
      * @param type
      * @return List<Article>
      */
-    List<Article> selectByType(@Param("type") String type);
+    List<Map<String, Object>> selectByType(@Param("type") int type);
 
     /**
      * @decription 根据前端传入的id查找文章内容
