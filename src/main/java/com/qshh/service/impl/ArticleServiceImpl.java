@@ -43,7 +43,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> allArticle() {
+    public List<Map<String, Object>> allArticle() {
         return articleMapper.allArticle();
     }
 

@@ -15,7 +15,7 @@ public interface ArticleService {
     String getContentById(int id);
     int addArticle(Article article);
     int delete(int id);
-    List<Article> allArticle();
+    List<Map<String, Object>> allArticle();
     Article selectById(int id);
     int updateArticle(Article article);
     String selectNameById(int id);

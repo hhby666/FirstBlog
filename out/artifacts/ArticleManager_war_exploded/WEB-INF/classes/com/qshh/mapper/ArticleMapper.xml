@@ -27,8 +27,12 @@
         delete from article where id = #{id}
     </delete>
 
-    <select id="allArticle" resultType="article">
-        select * from article;
+    <resultMap id="MapResult1" type="HashMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+    </resultMap>
+    <select id="allArticle" resultMap="MapResult1">
+        select id, title from article;
     </select>
 
     <select id="selectById" parameterType="int" resultType="article">

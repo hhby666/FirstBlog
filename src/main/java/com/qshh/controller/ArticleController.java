@@ -116,7 +116,7 @@ public class ArticleController {
     @ResponseBody
     @RequestMapping("/allArticle")
     public String allArticle() throws JsonProcessingException {
-        List<Article> allArticleList = articleService.allArticle();
+        List<Map<String, Object>> allArticleList = articleService.allArticle();
         return JsonUtils.toJson(allArticleList);
     }
 

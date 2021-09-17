@@ -44,7 +44,7 @@ public interface ArticleMapper {
      */
     int delete(@Param("id") int id);
 
-    List<Article> allArticle();
+    List<Map<String, Object>> allArticle();
 
     Article selectById(@Param("id") int id);
 
